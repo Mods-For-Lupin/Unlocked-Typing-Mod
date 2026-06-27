@@ -15,7 +15,7 @@ public class UnlockedTypingConfig {
   private static final Client CLIENT = new Client();
 
   public static Client client() {
-    
+
     return CLIENT;
   }
 
