@@ -1,5 +1,7 @@
-Mods-For-Lupin/**New-Mod-Template** is a customized implementation of [MultiLoader-Template](https://github.com/jaredlll08/MultiLoader-Template) for writing multi-loader (Fabric, (Neo)Forge) compatible mods, and supports exporting merged JAR files via [Forgix](https://github.com/PacifistMC/Forgix).
+# Unlocked Typing
 
-- [1.20.1](https://github.com/Mods-For-Lupin/New-Mod-Template/tree/1.20.1)
-- [1.21.1](https://github.com/Mods-For-Lupin/New-Mod-Template/tree/1.21.1)
-- [26.1.2](https://github.com/Mods-For-Lupin/New-Mod-Template/tree/26.1.2)
+Allows usage of the section symbol `§` in various places, such as world names, text on signs, books, and chat!
+
+- [1.20.1](https://github.com/Mods-For-Lupin/Unlocked-Typing-Mod/tree/1.20.1)
+- [1.21.1](https://github.com/Mods-For-Lupin/Unlocked-Typing-Mod/tree/1.21.1)
+- [26.1.2](https://github.com/Mods-For-Lupin/Unlocked-Typing-Mod/tree/26.1.2)
