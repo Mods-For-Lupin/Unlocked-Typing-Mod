@@ -3,6 +3,7 @@ package io.github.jason13official.unlocked_typing.platform;
 import io.github.jason13official.unlocked_typing.platform.services.IPlatformHelper;
 import java.nio.file.Path;
 import java.util.function.Supplier;
+import net.fabricmc.api.EnvType;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.world.entity.EntityType;
@@ -29,6 +30,11 @@ public class FabricPlatformHelper implements IPlatformHelper {
   public boolean isDevelopmentEnvironment() {
 
     return FabricLoader.getInstance().isDevelopmentEnvironment();
+  }
+
+  @Override
+  public boolean isClientSide() {
+    return FabricLoader.getInstance().getEnvironmentType() == EnvType.CLIENT;
   }
 
   @Override

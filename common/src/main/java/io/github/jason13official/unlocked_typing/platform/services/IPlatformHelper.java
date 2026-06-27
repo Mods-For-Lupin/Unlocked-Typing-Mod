@@ -42,6 +42,8 @@ public interface IPlatformHelper {
     return isDevelopmentEnvironment() ? "development" : "production";
   }
 
+  boolean isClientSide();
+
   Path getGameDirectory();
 
   default Path getConfigDirectory() {

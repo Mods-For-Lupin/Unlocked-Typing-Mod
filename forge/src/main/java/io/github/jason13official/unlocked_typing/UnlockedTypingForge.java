@@ -1,5 +1,6 @@
 package io.github.jason13official.unlocked_typing;
 
+import io.github.jason13official.unlocked_typing.impl.common.UnlockedTypingConfig;
 import io.github.jason13official.unlocked_typing.impl.common.registry.ModBlocks;
 import io.github.jason13official.unlocked_typing.impl.common.registry.ModEntities;
 import io.github.jason13official.unlocked_typing.impl.common.registry.ModItems;
@@ -7,6 +8,7 @@ import io.github.jason13official.unlocked_typing.impl.common.registry.ModMenus;
 import io.github.jason13official.unlocked_typing.impl.common.registry.ModParticles;
 import io.github.jason13official.unlocked_typing.impl.common.registry.ModTabs;
 import io.github.jason13official.unlocked_typing.impl.common.registry.ModTiles;
+import io.github.jason13official.unlocked_typing.platform.Services;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import net.minecraft.core.Registry;
@@ -78,6 +80,8 @@ public class UnlockedTypingForge {
     @Override
     protected void apply(Void unused, ResourceManager resourceManager, ProfilerFiller profilerFiller) {
       // ModConfig.load(Services.PLATFORM.getConfigDirectory());
+
+      UnlockedTypingConfig.load(Services.PLATFORM.getConfigDirectory());
     }
 
     @Override

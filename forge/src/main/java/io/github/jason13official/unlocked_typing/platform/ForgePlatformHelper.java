@@ -9,6 +9,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTab.Builder;
 import net.minecraft.world.item.Item.Properties;
 import net.minecraft.world.item.SpawnEggItem;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.loading.FMLLoader;
@@ -31,6 +32,11 @@ public class ForgePlatformHelper implements IPlatformHelper {
   public boolean isDevelopmentEnvironment() {
 
     return !FMLLoader.isProduction();
+  }
+
+  @Override
+  public boolean isClientSide() {
+    return FMLLoader.getDist() == Dist.CLIENT;
   }
 
   @Override
