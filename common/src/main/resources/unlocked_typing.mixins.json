@@ -7,6 +7,9 @@
   "mixins": [
   ],
   "client": [
+    "client._BookEditScreenAccessorMixin",
+    "client._LineInfoAccessorMixin",
+    "client._ScreenAccessorMixin",
     "MinecraftMixin"
   ],
   "server": [
