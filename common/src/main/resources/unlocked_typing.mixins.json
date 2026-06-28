@@ -13,6 +13,9 @@
     "client._DisplayCacheAccessorMixin",
     "client._LineInfoAccessorMixin",
     "client._ScreenAccessorMixin",
+    "client.AbstractSignEditScreenMixin",
+    "client.AnvilScreenMixin",
+    "client.BookEditScreenMixin",
     "client.MinecraftMixin",
     "client.ScreenMixin"
   ],
