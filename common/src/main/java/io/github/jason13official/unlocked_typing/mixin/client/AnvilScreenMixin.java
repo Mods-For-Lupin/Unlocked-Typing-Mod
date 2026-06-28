@@ -2,6 +2,7 @@ package io.github.jason13official.unlocked_typing.mixin.client;
 
 import io.github.jason13official.unlocked_typing.api.client.accessor.ScreenAccessor;
 import io.github.jason13official.unlocked_typing.impl.client.CopySymbolButton;
+import io.github.jason13official.unlocked_typing.impl.client.ToggleDisplayButton;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.AnvilScreen;
 import org.spongepowered.asm.mixin.Mixin;
@@ -18,6 +19,7 @@ public class AnvilScreenMixin {
     Screen self = (Screen) (Object) this;
     ScreenAccessor accessor = (ScreenAccessor) self;
 
+    accessor.unlocked_typing$addRenderableWidget(ToggleDisplayButton.create());
     accessor.unlocked_typing$addRenderableWidget(new CopySymbolButton());
   }
 }
