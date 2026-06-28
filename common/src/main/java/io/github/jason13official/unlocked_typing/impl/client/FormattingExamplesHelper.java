@@ -15,7 +15,7 @@ public class FormattingExamplesHelper {
   public static final Map<String, Component> FORMATTING_EXAMPLES = new LinkedHashMap<>();
 
   public static void renderFormattingExamples(GuiGraphics guiGraphics, Font font) {
-    
+
     tryFill();
 
     int startY = 20;
