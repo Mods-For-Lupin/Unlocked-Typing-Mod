@@ -1,4 +1,4 @@
-package io.github.jason13official.unlocked_typing.mixin;
+package io.github.jason13official.unlocked_typing.mixin.client;
 
 import io.github.jason13official.unlocked_typing.Constants;
 import io.github.jason13official.unlocked_typing.platform.Services;
