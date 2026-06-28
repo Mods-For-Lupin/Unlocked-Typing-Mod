@@ -10,6 +10,7 @@
   ],
   "client": [
     "client._BookEditScreenAccessorMixin",
+    "client._DisplayCacheAccessorMixin",
     "client._LineInfoAccessorMixin",
     "client._ScreenAccessorMixin",
     "MinecraftMixin"

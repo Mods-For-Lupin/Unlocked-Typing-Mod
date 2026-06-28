@@ -13,11 +13,12 @@ mixin {
 legacyForge {
     version = "${minecraft_version}-${forge_version}"
 
-    validateAccessTransformers = true
+    // validateAccessTransformers = true
 
     def at = project(':common').file('src/main/resources/META-INF/accesstransformer.cfg')
     if (at.exists()) {
-        accessTransformers = ["src/main/resources/META-INF/accesstransformer.cfg"]
+        // accessTransformers = ["src/main/resources/META-INF/accesstransformer.cfg"]
+        accessTransformers.from(at.getAbsolutePath())
     }
     parchment {
         minecraftVersion = parchment_minecraft
@@ -48,7 +49,7 @@ sourceSets.main.resources.srcDir 'src/generated/resources'
 dependencies {
     compileOnly project(":common")
     annotationProcessor("org.spongepowered:mixin:0.8.5-SNAPSHOT:processor")
-    modImplementation "curse.maven:monolib-968432:7974599"
+    // modImplementation "curse.maven:monolib-968432:7974599"
 }
 
 jar {

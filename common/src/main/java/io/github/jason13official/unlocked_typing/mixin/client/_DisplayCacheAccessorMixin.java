@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(DisplayCache.class)
-public abstract class _DisplayCacheAccessorMixin implements DisplayCacheAccessor {
+public class _DisplayCacheAccessorMixin implements DisplayCacheAccessor {
 
   @Shadow
   @Final
