@@ -16,6 +16,7 @@
     "client._ScreenAccessorMixin",
     "client.AbstractSignEditScreenMixin",
     "client.AnvilScreenMixin",
+    "client.AnvilScreenRenderMixin",
     "client.BookEditScreenMixin",
     "client.ScreenMixin"
   ],
