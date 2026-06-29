@@ -4,6 +4,7 @@
   "package": "io.github.jason13official.unlocked_typing.mixin",
   "refmap": "${mod_id}.refmap.json",
   "compatibilityLevel": "JAVA_21",
+  "plugin": "io.github.jason13official.unlocked_typing.UTMixinConfigFabric",
   "mixins": [],
   "client": [
     "FabricTitleScreenMixin"
