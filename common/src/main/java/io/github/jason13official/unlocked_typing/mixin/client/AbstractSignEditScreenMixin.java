@@ -72,6 +72,6 @@ public abstract class AbstractSignEditScreenMixin {
     Screen self = (Screen) (Object) this;
     ScreenAccessor accessor = (ScreenAccessor) self;
     accessor.unlocked_typing$addRenderableWidget(ToggleDisplayButton.create());
-    accessor.unlocked_typing$addRenderableWidget(new CopySymbolButton());
+    accessor.unlocked_typing$addRenderableWidget(CopySymbolButton.create());
   }
 }

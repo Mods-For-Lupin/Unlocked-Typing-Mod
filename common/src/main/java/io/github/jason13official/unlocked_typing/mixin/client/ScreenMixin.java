@@ -9,6 +9,7 @@ import net.minecraft.client.gui.components.Renderable;
 import net.minecraft.client.gui.components.events.GuiEventListener;
 import net.minecraft.client.gui.narration.NarratableEntry;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.gui.screens.inventory.AbstractSignEditScreen;
 import net.minecraft.client.gui.screens.inventory.BookEditScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -21,7 +22,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class ScreenMixin {
 
   @Unique
-  private static final Predicate<Screen> UNLOCKED_TYPING$VALID_DISPLAY = self -> self instanceof BookEditScreen;
+  private static final Predicate<Screen> UNLOCKED_TYPING$VALID_DISPLAY =
+      self -> self instanceof BookEditScreen || self instanceof AbstractSignEditScreen;
 
   @Shadow
   protected Font font;

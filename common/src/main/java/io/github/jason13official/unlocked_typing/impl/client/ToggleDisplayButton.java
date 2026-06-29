@@ -13,7 +13,7 @@ public class ToggleDisplayButton {
             UnlockedTypingConfig.client().shouldDisplayExamples()
         )
         .withValues(true, false)
-        .create(0, 0, 80, 16, Component.literal("Display"), (button, bool) -> {
+        .create(4, 4, 80, 16, Component.literal("Display"), (button, bool) -> {
           UnlockedTypingConfig.client().setDisplayExamples(bool);
           UnlockedTypingConfig.overwriteClient();
         });
