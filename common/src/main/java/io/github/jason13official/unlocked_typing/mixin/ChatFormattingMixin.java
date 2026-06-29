@@ -14,6 +14,7 @@ public class ChatFormattingMixin {
   @Inject(at = @At("HEAD"), method = "stripFormatting", cancellable = true)
   private static void unlocked_typing$stripFormatting(String text, CallbackInfoReturnable<String> cir) {
 
-    cir.setReturnValue(text);
+    // null safety, just return original text if it exists
+    if (text != null) cir.setReturnValue(text);
   }
 }
