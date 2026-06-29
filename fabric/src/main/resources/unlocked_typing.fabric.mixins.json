@@ -6,8 +6,10 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [],
   "client": [
+    "FabricBookEditScreenMixin",
     "FabricTitleScreenMixin"
   ],
+  "plugin": "io.github.jason13official.unlocked_typing.UTMixinConfigFabric",
   "server": [],
   "injectors": {
     "defaultRequire": 1

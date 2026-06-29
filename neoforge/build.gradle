@@ -42,3 +42,7 @@ neoForge {
 }
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+dependencies {
+    implementation 'com.electronwill.night-config:toml:3.6.0'
+}
