@@ -11,6 +11,7 @@ import net.minecraft.client.gui.narration.NarratableEntry;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.AbstractSignEditScreen;
 import net.minecraft.client.gui.screens.inventory.BookEditScreen;
+import net.minecraft.client.gui.screens.inventory.BookSignScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -23,7 +24,7 @@ public abstract class ScreenMixin {
 
   @Unique
   private static final Predicate<Screen> UNLOCKED_TYPING$VALID_DISPLAY =
-      self -> self instanceof BookEditScreen || self instanceof AbstractSignEditScreen;
+      self -> self instanceof BookEditScreen || self instanceof AbstractSignEditScreen || self instanceof BookSignScreen;
 
   @Shadow
   protected Font font;
