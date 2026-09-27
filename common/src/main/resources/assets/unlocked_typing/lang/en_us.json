@@ -1,4 +1,27 @@
 {
   "unlocked_typing.preformattedTextTitle": "Original Text with '§':",
-  "unlocked_typing.formatCodesTitle": "Formatting Codes"
+  "unlocked_typing.button.copySymbol": "Copy Symbol",
+  "unlocked_typing.button.formattingCodes": "View Formatting Codes",
+  "unlocked_typing.formatting.black": "Black",
+  "unlocked_typing.formatting.dark_blue": "Dark Blue",
+  "unlocked_typing.formatting.dark_green": "Dark Green",
+  "unlocked_typing.formatting.dark_aqua": "Dark Aqua",
+  "unlocked_typing.formatting.dark_red": "Dark Red",
+  "unlocked_typing.formatting.dark_purple": "Dark Purple",
+  "unlocked_typing.formatting.gold": "Gold",
+  "unlocked_typing.formatting.gray": "Gray",
+  "unlocked_typing.formatting.dark_gray": "Dark Gray",
+  "unlocked_typing.formatting.blue": "Blue",
+  "unlocked_typing.formatting.green": "Green",
+  "unlocked_typing.formatting.aqua": "Aqua",
+  "unlocked_typing.formatting.red": "Red",
+  "unlocked_typing.formatting.light_purple": "Light Purple",
+  "unlocked_typing.formatting.yellow": "Yellow",
+  "unlocked_typing.formatting.white": "White",
+  "unlocked_typing.formatting.obfuscated": "Obfuscated",
+  "unlocked_typing.formatting.bold": "Bold",
+  "unlocked_typing.formatting.strikethrough": "Strikethrough",
+  "unlocked_typing.formatting.underline": "Underline",
+  "unlocked_typing.formatting.italic": "Italic",
+  "unlocked_typing.formatting.reset": "Reset"
 }

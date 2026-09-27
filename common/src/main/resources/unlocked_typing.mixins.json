@@ -11,14 +11,13 @@
   "client": [
     "MinecraftMixin",
     "client._BookEditScreenAccessorMixin",
+    "client._ContainerScreenAccessorMixin",
     "client._DisplayCacheAccessorMixin",
     "client._LineInfoAccessorMixin",
     "client._ScreenAccessorMixin",
     "client.AbstractSignEditScreenMixin",
     "client.AnvilScreenMixin",
-    "client.AnvilScreenRenderMixin",
-    "client.BookEditScreenMixin",
-    "client.ScreenMixin"
+    "client.BookEditScreenMixin"
   ],
   "server": [],
   "injectors": {
