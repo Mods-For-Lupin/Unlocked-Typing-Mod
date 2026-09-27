@@ -17,7 +17,8 @@
     "client._ScreenAccessorMixin",
     "client.AbstractSignEditScreenMixin",
     "client.AnvilScreenMixin",
-    "client.BookEditScreenMixin"
+    "client.BookEditScreenMixin",
+    "client.ItemCombinerScreenMixin"
   ],
   "server": [],
   "injectors": {

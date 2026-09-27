@@ -1,7 +1,9 @@
 {
   "unlocked_typing.preformattedTextTitle": "Original Text with '§':",
   "unlocked_typing.button.copySymbol": "Copy Symbol",
+  "unlocked_typing.button.copySymbol.description": "Click to copy the section sign to your clipboard.",
   "unlocked_typing.button.formattingCodes": "View Formatting Codes",
+  "unlocked_typing.button.formattingCodes.description": "Click to show or hide the list of formatting codes.",
   "unlocked_typing.formatting.black": "Black",
   "unlocked_typing.formatting.dark_blue": "Dark Blue",
   "unlocked_typing.formatting.dark_green": "Dark Green",

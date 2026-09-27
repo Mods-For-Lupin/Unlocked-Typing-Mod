@@ -1,7 +1,9 @@
 {
   "unlocked_typing.preformattedTextTitle": "Texto original con '§':",
   "unlocked_typing.button.copySymbol": "Copiar código",
+  "unlocked_typing.button.copySymbol.description": "Haz clic para copiar el símbolo de sección al portapapeles.",
   "unlocked_typing.button.formattingCodes": "Ver colores",
+  "unlocked_typing.button.formattingCodes.description": "Haz clic para mostrar u ocultar la lista de códigos de formato.",
   "unlocked_typing.formatting.black": "Negro",
   "unlocked_typing.formatting.dark_blue": "Azul oscuro",
   "unlocked_typing.formatting.dark_green": "Verde oscuro",
