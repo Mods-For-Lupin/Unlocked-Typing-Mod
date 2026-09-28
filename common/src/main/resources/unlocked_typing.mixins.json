@@ -10,11 +10,13 @@
   ],
   "client": [
     "MinecraftMixin",
+    "client._ContainerScreenAccessorMixin",
     "client._ScreenAccessorMixin",
     "client.AbstractSignEditScreenMixin",
     "client.AnvilScreenMixin",
     "client.BookEditScreenMixin",
     "client.BookSignScreenMixin",
+    "client.ItemCombinerScreenMixin",
     "client.ScreenMixin"
   ],
   "server": [],

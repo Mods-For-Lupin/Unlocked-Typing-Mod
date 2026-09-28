@@ -1,8 +1,7 @@
 package io.github.jason13official.unlocked_typing.mixin.client;
 
 import io.github.jason13official.unlocked_typing.api.client.accessor.ScreenAccessor;
-import io.github.jason13official.unlocked_typing.impl.client.CopySymbolButton;
-import io.github.jason13official.unlocked_typing.impl.client.ToggleDisplayButton;
+import io.github.jason13official.unlocked_typing.impl.client.FormattingWidgets;
 import io.github.jason13official.unlocked_typing.impl.common.UnlockedTypingConfig;
 import java.util.List;
 import net.minecraft.client.Minecraft;
@@ -29,14 +28,12 @@ public abstract class BookEditScreenMixin {
   @Inject(at = @At("TAIL"), method = "init()V")
   private void unlocked_typing$init(CallbackInfo ci) {
     Screen self = (Screen) (Object) this;
-    ScreenAccessor accessor = (ScreenAccessor) self;
-    accessor.unlocked_typing$addRenderableWidget(ToggleDisplayButton.create());
-    accessor.unlocked_typing$addRenderableWidget(CopySymbolButton.create());
+    FormattingWidgets.addTo((ScreenAccessor) self, self.width / 2 - 124, self.width / 2 + 104, 196, 20);
   }
 
   @Inject(at = @At("TAIL"), method = "extractRenderState")
   private void unlocked_typing$extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float a, CallbackInfo ci) {
-    if (!UnlockedTypingConfig.client().shouldDisplayExamples()) return;
+    if (!UnlockedTypingConfig.client().shouldDisplayRawTextPreview()) return;
 
     Font font = Minecraft.getInstance().font;
     String pageText = this.pages.isEmpty() ? "" : this.pages.get(this.currentPage);

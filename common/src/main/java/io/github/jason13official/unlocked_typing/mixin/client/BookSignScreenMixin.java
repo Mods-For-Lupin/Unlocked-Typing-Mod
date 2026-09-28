@@ -1,13 +1,13 @@
 package io.github.jason13official.unlocked_typing.mixin.client;
 
 import io.github.jason13official.unlocked_typing.api.client.accessor.ScreenAccessor;
-import io.github.jason13official.unlocked_typing.impl.client.CopySymbolButton;
-import io.github.jason13official.unlocked_typing.impl.client.ToggleDisplayButton;
+import io.github.jason13official.unlocked_typing.impl.client.FormattingWidgets;
 import io.github.jason13official.unlocked_typing.impl.common.UnlockedTypingConfig;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.EditBox;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.BookSignScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
@@ -33,14 +33,13 @@ public class BookSignScreenMixin {
 
   @Inject(at = @At("TAIL"), method = "init()V")
   private void unlocked_typing$init(CallbackInfo ci) {
-    ScreenAccessor accessor = (ScreenAccessor)(Object)this;
-    accessor.unlocked_typing$addRenderableWidget(ToggleDisplayButton.create());
-    accessor.unlocked_typing$addRenderableWidget(CopySymbolButton.create());
+    Screen self = (Screen) (Object) this;
+    FormattingWidgets.addTo((ScreenAccessor) self, self.width / 2 - 124, self.width / 2 + 104, 196, 20);
   }
 
   @Inject(at = @At("TAIL"), method = "extractRenderState")
   private void unlocked_typing$extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float a, CallbackInfo ci) {
-    if (!UnlockedTypingConfig.client().shouldDisplayExamples() || this.titleBox == null) return;
+    if (!UnlockedTypingConfig.client().shouldDisplayRawTextPreview() || this.titleBox == null) return;
 
     String title = this.titleBox.getValue();
     Font font = Minecraft.getInstance().font;

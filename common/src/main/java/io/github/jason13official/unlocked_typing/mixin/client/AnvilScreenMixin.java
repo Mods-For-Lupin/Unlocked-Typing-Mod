@@ -1,33 +1,47 @@
 package io.github.jason13official.unlocked_typing.mixin.client;
 
+import io.github.jason13official.unlocked_typing.api.client.accessor.AnvilScreenAccessor;
+import io.github.jason13official.unlocked_typing.api.client.accessor.ContainerScreenAccessor;
 import io.github.jason13official.unlocked_typing.api.client.accessor.ScreenAccessor;
-import io.github.jason13official.unlocked_typing.impl.client.CopySymbolButton;
-import io.github.jason13official.unlocked_typing.impl.client.FormattingExamplesHelper;
-import io.github.jason13official.unlocked_typing.impl.client.ToggleDisplayButton;
-import io.github.jason13official.unlocked_typing.impl.common.UnlockedTypingConfig;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
-import net.minecraft.client.gui.screens.Screen;
+import io.github.jason13official.unlocked_typing.impl.client.FormattingWidgets;
+import io.github.jason13official.unlocked_typing.platform.Services;
+import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.screens.inventory.AnvilScreen;
+import net.minecraft.network.chat.Style;
+import net.minecraft.util.FormattedCharSequence;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.Unique;
 
 @Mixin(AnvilScreen.class)
-public class AnvilScreenMixin {
+public class AnvilScreenMixin implements AnvilScreenAccessor {
 
-  @Inject(at = @At("TAIL"), method = "subInit")
-  private void unlocked_typing$init(CallbackInfo ci) {
-    Screen self = (Screen) (Object) this;
-    ScreenAccessor accessor = (ScreenAccessor) self;
-    accessor.unlocked_typing$addRenderableWidget(ToggleDisplayButton.create());
-    accessor.unlocked_typing$addRenderableWidget(CopySymbolButton.create());
-  }
+  @Unique
+  private static final int UNLOCKED_TYPING$BUTTON_SIZE = 14;
 
-  @Inject(at = @At("TAIL"), method = "extractBackground")
-  private void unlocked_typing$extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float a, CallbackInfo ci) {
-    if (!UnlockedTypingConfig.client().shouldDisplayExamples()) return;
-    FormattingExamplesHelper.renderFormattingExamples(graphics, Minecraft.getInstance().font);
+  @Unique
+  private static final int UNLOCKED_TYPING$EASY_ANVILS_TITLE_Y = 8;
+
+  @Unique
+  private static final int UNLOCKED_TYPING$EASY_ANVILS_GAP = 2;
+
+  @Override
+  public void unlocked_typing$initFormattingWidgets() {
+    ContainerScreenAccessor container = (ContainerScreenAccessor) this;
+    ScreenAccessor screen = (ScreenAccessor) this;
+    int right = container.unlocked_typing$getLeftPos() + container.unlocked_typing$getImageWidth() - 7;
+    int top = container.unlocked_typing$getTopPos();
+
+    if (Services.PLATFORM.isModLoaded("easyanvils")) {
+      Font font = screen.unlocked_typing$getFont();
+      int width = font.width(FormattedCharSequence.forward("§", Style.EMPTY)) * 2;
+      int x = right - font.width("?") * 2 - UNLOCKED_TYPING$EASY_ANVILS_GAP - width;
+      FormattingWidgets.addPlainCopyTo(screen, x, top + UNLOCKED_TYPING$EASY_ANVILS_TITLE_Y, width, font.lineHeight);
+      return;
+    }
+
+    int size = UNLOCKED_TYPING$BUTTON_SIZE;
+    int helpX = right - size;
+    int copyX = helpX - size - 2;
+    FormattingWidgets.addTo(screen, copyX, helpX, top + 4, size);
   }
 }
