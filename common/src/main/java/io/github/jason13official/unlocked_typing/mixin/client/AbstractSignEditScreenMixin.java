@@ -69,6 +69,6 @@ public abstract class AbstractSignEditScreenMixin {
   @Inject(at = @At("TAIL"), method = "init()V")
   private void unlocked_typing$init(CallbackInfo ci) {
     Screen self = (Screen) (Object) this;
-    FormattingWidgets.addTo((ScreenAccessor) self, self.width / 2 - 124, self.width / 2 + 104, self.height / 4 + 144, 20);
+    FormattingWidgets.addRow((ScreenAccessor) self, self.width / 2, self.height / 4 + 144 - FormattingWidgets.ROW_SPACING);
   }
 }

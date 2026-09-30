@@ -28,7 +28,8 @@ public abstract class BookEditScreenMixin {
   @Inject(at = @At("TAIL"), method = "init()V")
   private void unlocked_typing$init(CallbackInfo ci) {
     Screen self = (Screen) (Object) this;
-    FormattingWidgets.addTo((ScreenAccessor) self, self.width / 2 - 124, self.width / 2 + 104, 196, 20);
+    FormattingWidgets.moveButtons(self, 196, 196 + FormattingWidgets.ROW_SPACING);
+    FormattingWidgets.addRow((ScreenAccessor) self, self.width / 2, 196);
   }
 
   @Inject(at = @At("TAIL"), method = "extractRenderState")
