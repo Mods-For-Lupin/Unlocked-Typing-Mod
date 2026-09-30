@@ -1,11 +1,13 @@
 package io.github.jason13official.unlocked_typing.mixin.client;
 
 import io.github.jason13official.unlocked_typing.api.client.accessor.ScreenAccessor;
+import java.util.List;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.components.Renderable;
 import net.minecraft.client.gui.components.events.GuiEventListener;
 import net.minecraft.client.gui.narration.NarratableEntry;
 import net.minecraft.client.gui.screens.Screen;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
@@ -19,7 +21,16 @@ public abstract class _ScreenAccessorMixin implements ScreenAccessor {
   protected Font font;
 
   @Shadow
-  protected abstract <T extends GuiEventListener & Renderable & NarratableEntry> T addRenderableWidget(T widget);
+  @Final
+  private List<GuiEventListener> children;
+
+  @Shadow
+  @Final
+  private List<NarratableEntry> narratables;
+
+  @Shadow
+  @Final
+  private List<Renderable> renderables;
 
   @Override
   public int unlocked_typing$getWidth() {
@@ -36,6 +47,9 @@ public abstract class _ScreenAccessorMixin implements ScreenAccessor {
   @Override
   public <T extends GuiEventListener & Renderable & NarratableEntry> T unlocked_typing$addRenderableWidget(T widget) {
 
-    return this.addRenderableWidget(widget);
+    this.renderables.add(widget);
+    this.children.add(widget);
+    this.narratables.add(widget);
+    return widget;
   }
 }
