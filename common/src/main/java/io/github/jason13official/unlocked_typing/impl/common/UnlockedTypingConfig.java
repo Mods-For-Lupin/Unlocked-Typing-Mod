@@ -46,11 +46,12 @@ public class UnlockedTypingConfig {
       if (Files.exists(configFilepath)) {
         config.load();
       }
-      CLIENT.setDisplayExamples(config.getOrElse("display_formatting_examples", true));
+      CLIENT.setDisplayRawTextPreview(config.getOrElse("display_raw_text_preview", false));
+      config.remove("display_formatting_examples");
 
       // saving
-      config.setComment("display_formatting_examples", " Whether examples should be displayed on relevant screens.");
-      config.set("display_formatting_examples", CLIENT.shouldDisplayExamples());
+      config.setComment("display_raw_text_preview", " Whether the unformatted text (with visible '§' codes) is previewed beside books and signs while editing.");
+      config.set("display_raw_text_preview", CLIENT.shouldDisplayRawTextPreview());
       config.save();
 
     } catch (Exception e) {
@@ -62,8 +63,8 @@ public class UnlockedTypingConfig {
 
   public static void overwriteClient() {
     overwrite(Constants.MOD_ID + "-client.toml", config -> {
-      config.setComment("display_formatting_examples", " Whether examples should be displayed on relevant screens.");
-      config.set("display_formatting_examples", CLIENT.shouldDisplayExamples());
+      config.setComment("display_raw_text_preview", " Whether the unformatted text (with visible '§' codes) is previewed beside books and signs while editing.");
+      config.set("display_raw_text_preview", CLIENT.shouldDisplayRawTextPreview());
     });
   }
 
@@ -93,14 +94,14 @@ public class UnlockedTypingConfig {
 
   public static class Client {
 
-    boolean displayExamples = true;
+    boolean displayRawTextPreview = false;
 
-    public void setDisplayExamples(boolean displayExamples) {
-      this.displayExamples = displayExamples;
+    public void setDisplayRawTextPreview(boolean displayRawTextPreview) {
+      this.displayRawTextPreview = displayRawTextPreview;
     }
 
-    public boolean shouldDisplayExamples() {
-      return displayExamples;
+    public boolean shouldDisplayRawTextPreview() {
+      return displayRawTextPreview;
     }
   }
 }

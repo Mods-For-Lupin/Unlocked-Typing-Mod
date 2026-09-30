@@ -1,8 +1,7 @@
 package io.github.jason13official.unlocked_typing.mixin.client;
 
 import io.github.jason13official.unlocked_typing.api.client.accessor.ScreenAccessor;
-import io.github.jason13official.unlocked_typing.impl.client.CopySymbolButton;
-import io.github.jason13official.unlocked_typing.impl.client.ToggleDisplayButton;
+import io.github.jason13official.unlocked_typing.impl.client.FormattingWidgets;
 import io.github.jason13official.unlocked_typing.impl.common.UnlockedTypingConfig;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
@@ -45,7 +44,7 @@ public abstract class AbstractSignEditScreenMixin {
   @Inject(at = @At("TAIL"), method = "renderSignText")
   private void unlocked_typing$renderSignText(GuiGraphics guiGraphics, CallbackInfo ci) {
 
-    if (!UnlockedTypingConfig.client().shouldDisplayExamples()) {
+    if (!UnlockedTypingConfig.client().shouldDisplayRawTextPreview()) {
       return;
     }
 
@@ -80,9 +79,6 @@ public abstract class AbstractSignEditScreenMixin {
   private void unlocked_typing$init(CallbackInfo ci) {
 
     Screen self = (Screen) (Object) this;
-    ScreenAccessor accessor = (ScreenAccessor) self;
-
-    accessor.unlocked_typing$addRenderableWidget(ToggleDisplayButton.create());
-    accessor.unlocked_typing$addRenderableWidget(new CopySymbolButton());
+    FormattingWidgets.addRow((ScreenAccessor) self, self.width / 2, self.height / 4 + 144 - FormattingWidgets.ROW_SPACING);
   }
 }

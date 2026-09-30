@@ -4,8 +4,7 @@ import io.github.jason13official.unlocked_typing.api.client.accessor.BookEditScr
 import io.github.jason13official.unlocked_typing.api.client.accessor.DisplayCacheAccessor;
 import io.github.jason13official.unlocked_typing.api.client.accessor.LineInfoAccessor;
 import io.github.jason13official.unlocked_typing.api.client.accessor.ScreenAccessor;
-import io.github.jason13official.unlocked_typing.impl.client.CopySymbolButton;
-import io.github.jason13official.unlocked_typing.impl.client.ToggleDisplayButton;
+import io.github.jason13official.unlocked_typing.impl.client.FormattingWidgets;
 import io.github.jason13official.unlocked_typing.impl.common.UnlockedTypingConfig;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -59,7 +58,7 @@ public abstract class BookEditScreenMixin {
   @Inject(at = @At("TAIL"), method = "render")
   private void unlocked_typing$render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick, CallbackInfo ci) {
 
-    if (!UnlockedTypingConfig.client().shouldDisplayExamples()) {
+    if (!UnlockedTypingConfig.client().shouldDisplayRawTextPreview()) {
       return;
     }
 
@@ -125,9 +124,7 @@ public abstract class BookEditScreenMixin {
   private void unlocked_typing$init(CallbackInfo ci) {
 
     Screen self = (Screen) (Object) this;
-    ScreenAccessor accessor = (ScreenAccessor) self;
-
-    accessor.unlocked_typing$addRenderableWidget(ToggleDisplayButton.create());
-    accessor.unlocked_typing$addRenderableWidget(new CopySymbolButton());
+    FormattingWidgets.moveButtons(self, 196, 196 + FormattingWidgets.ROW_SPACING);
+    FormattingWidgets.addRow((ScreenAccessor) self, self.width / 2, 196);
   }
 }

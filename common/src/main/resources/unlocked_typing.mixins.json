@@ -10,14 +10,15 @@
   ],
   "client": [
     "client._BookEditScreenAccessorMixin",
+    "client._ContainerScreenAccessorMixin",
     "client._DisplayCacheAccessorMixin",
     "client._LineInfoAccessorMixin",
     "client._ScreenAccessorMixin",
     "client.AbstractSignEditScreenMixin",
     "client.AnvilScreenMixin",
     "client.BookEditScreenMixin",
-    "client.MinecraftMixin",
-    "client.ScreenMixin"
+    "client.ItemCombinerScreenMixin",
+    "client.MinecraftMixin"
   ],
   "server": [
   ],
