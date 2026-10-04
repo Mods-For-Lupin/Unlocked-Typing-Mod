@@ -12,6 +12,11 @@ public class UTMixinConfigForge implements IMixinConfigPlugin {
   @Override
   public void onLoad(String mixinPackage) {
 
+    System.out.println("IMixinConfigPlugin#onLoad on Forge 1.20.1 ");
+
+    boolean dev = Services.PLATFORM.isDevelopmentEnvironment();
+    System.out.println("dev? " + String.valueOf(dev));
+
   }
 
   @Override
@@ -21,6 +26,11 @@ public class UTMixinConfigForge implements IMixinConfigPlugin {
 
   @Override
   public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
+
+    System.out.println("IMixinConfigPlugin#shouldApplyMixin on Forge 1.20.1 ");
+
+    boolean dev = Services.PLATFORM.isDevelopmentEnvironment();
+    System.out.println("dev? " + String.valueOf(dev));
 
     System.out.println("checking target and mixin " + targetClassName + " " + mixinClassName);
 

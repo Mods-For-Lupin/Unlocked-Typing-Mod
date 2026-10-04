@@ -50,4 +50,6 @@ public interface IPlatformHelper {
 
     return getGameDirectory().resolve("config");
   }
+
+  SpawnEggItem egg();
 }

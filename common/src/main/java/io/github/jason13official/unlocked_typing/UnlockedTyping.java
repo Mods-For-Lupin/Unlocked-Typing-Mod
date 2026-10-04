@@ -10,6 +10,8 @@ public class UnlockedTyping {
   public static void init() {
 
     UnlockedTypingConfig.load(Services.PLATFORM.getConfigDirectory());
+
+    var nothing = Services.PLATFORM.egg();
   }
 
   public static ResourceLocation identifier(final String path) {
