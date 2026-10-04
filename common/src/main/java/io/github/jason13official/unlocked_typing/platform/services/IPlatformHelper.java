@@ -50,8 +50,4 @@ public interface IPlatformHelper {
 
     return getGameDirectory().resolve("config");
   }
-
-  CreativeModeTab.Builder tabBuilder();
-
-  SpawnEggItem createSpawnEggItem(Supplier<EntityType<? extends Mob>> typeSupplier, int background, int highlight, Properties properties);
 }

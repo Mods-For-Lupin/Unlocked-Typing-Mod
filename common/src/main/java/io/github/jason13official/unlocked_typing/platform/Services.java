@@ -8,7 +8,10 @@ import java.util.ServiceLoader;
 /// @see <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ServiceLoader.html">ServiceLoader</a> Oracle's Javadoc
 public class Services {
 
-  public static final IPlatformHelper PLATFORM = load(IPlatformHelper.class);
+  static {
+
+    System.out.println("Services for Unlocked Typing attempting to load.");
+  }
 
   /// modified from MultiLoader-Template original to enable merged service loader files i.e. our merged `io.github.jason13official.unlocked_typing.platform.services.IPlatformHelper` might contain:
   ///
@@ -40,5 +43,7 @@ public class Services {
     }
 
     throw new IllegalStateException("Failed to load service for " + clazz.getName());
-  }
+  }  public static final IPlatformHelper PLATFORM = load(IPlatformHelper.class);
+
+
 }
